@@ -49,6 +49,7 @@
     <Compile Include="CarQuerries.cs" />
     <Compile Include="CarSalesBook.cs" />
     <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="MyGenericCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

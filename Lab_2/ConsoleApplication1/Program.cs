@@ -26,10 +26,18 @@ namespace ConsoleApplication1
             Console.WriteLine("memory used by processes: " + processList.GetTotalMemory());
 
             Func<int, bool> IsLeapYear = (x) => DateTime.IsLeapYear(x);
-            instance += x => Console.WriteLine("year {0} is {1}", x, IsLeapYear(x) ? "leap" : "not leap"); 
+            instance += x => Console.WriteLine("year {0} is {1}", x, IsLeapYear(x) ? "leap" : "not leap");
             instance(2019);
             Console.WriteLine("Is 2019 a leap year? " + IsLeapYear(2019));
 
+            MyGenericCollection<Car> carTest = new MyGenericCollection<Car>();
+
+            carTest.Add(new Car("Mini") { Sales2014 = 1241, Sales2015 = 1235 });
+            carTest.Add(new Car("BMW") { Sales2014 = 1241, Sales2015 = 1235 });
+            carTest.Add(new Car("AAA") { Sales2014 = 1241, Sales2015 = 1235 });
+            Console.WriteLine("car.Make index 30: " + carTest.Get(30).Make);
+            Console.WriteLine("car.Make index 3: " + carTest.Get(3).Make);
+            Console.WriteLine("is list empty? " + carTest.IsEmpty());
 
             Console.ReadLine();
         }

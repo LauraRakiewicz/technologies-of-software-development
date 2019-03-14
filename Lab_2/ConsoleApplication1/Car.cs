@@ -23,7 +23,6 @@ namespace TSD.Linq.Cars
             throw new NotImplementedException();
         }
 
-
         public int GetNumeberOfSeats()
         {
             var numberOfSeats = this.NumberOfSeats ?? default(int);
