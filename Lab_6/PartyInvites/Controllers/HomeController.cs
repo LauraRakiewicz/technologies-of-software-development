@@ -38,9 +38,22 @@ namespace PartyInvites.Controllers
             }
         }
 
+
         public ViewResult ListResponses()
         {
             return View(Repository.Responses.Where(r => r.WillAttend == true));
+        }
+        
+
+        public ViewResult Details(string name)
+        {
+            var guest = Repository.Responses.FirstOrDefault(r => r.Name == name);
+            if (guest != null)
+            {
+                return View(guest);
+            }
+
+            return View(); 
         }
     }
 }

@@ -1,0 +1,37 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center">
+            <h4>Personal Details</h4>
+        </div>
+        <div>
+            <label>Name:</label>
+            <p>@Model.Name</p>
+
+            <label>Phone:</label>
+            <p>@Model.Phone</p>
+
+            <label>Email:</label>
+            <p>@Model.Email</p>
+
+        </div>
+        <p>
+            Click <a class="nav-link" asp-action="ListResponses">here</a>
+            to see who is coming.
+        </p>
+    </div>
+</body>
+</html>

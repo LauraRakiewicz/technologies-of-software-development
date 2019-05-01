@@ -1,0 +1,30 @@
+﻿@model PartyInvites.Controllers.OrderModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center">
+            <h4>Guests Orders</h4>
+        </div>
+        <div>
+            <label>Number of vegetarian food orders:</label>
+            <p>@Model.Vegetarians</p>
+
+            <label>Number of people going by bus:</label>
+            <p>@Model.IsGoingByBus</p>
+
+        </div>
+    </div>
+</body>
+</html>
