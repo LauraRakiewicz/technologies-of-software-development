@@ -5,16 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PartyInvites.Models;
+using PartyInvites.Services;
 
 namespace PartyInvites.Controllers
 {
     public class OrderController : Controller
     {
 
+        CountService countService;
+
         public ViewResult Orders()
         {
-            var vegetarians = Repository.Responses.Where(r => r.GuestOrder.IsVegetarian == true).Count();
-            var isGoingByBus = Repository.Responses.Where(r => r.GuestOrder.IsGoingByBus == true).Count();
+            countService = new CountService();
+        
+            var vegetarians = countService.GetNumberOfPeopleVegetarian();
+            var isGoingByBus = countService.GetNumberOfPeopleGoingByBus();
 
             var mod = new OrderModel(vegetarians, isGoingByBus);
             return View(mod);
@@ -31,7 +36,7 @@ namespace PartyInvites.Controllers
 
         public int Vegetarians { get; set; }
         public int IsGoingByBus { get; set; }
-           
+
     }
 
 }

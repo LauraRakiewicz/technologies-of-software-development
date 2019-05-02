@@ -23,5 +23,8 @@ namespace PartyInvites.Models
         public bool? WillAttend { get; set; }
 
         public GuestOrder GuestOrder { get; set; }
+
     }
+
+   
 }
